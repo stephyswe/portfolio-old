@@ -5,6 +5,7 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import { cn } from "@/lib/utils"
 import { Callout } from "@/components/callout"
 import { MdxCard } from "@/components/mdx-card"
+import { Pre } from "./mdx/pre"
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -129,19 +130,11 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }) => (
-    <pre
-      className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
-        className
-      )}
-      {...props}
-    />
-  ),
+  pre: Pre,
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
+        "rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
         className
       )}
       {...props}
